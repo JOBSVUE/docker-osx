@@ -1,4 +1,4 @@
-FROM dockurr/macos:1.14
+FROM dockurr/macos:2.32
 
 ENV VERSION=15 \
     DISK_SIZE=256G \
