@@ -10,6 +10,8 @@ ENV VERSION=15 \
     RAM_SIZE=8G \
     CPU_CORES=1
 
+EXPOSE 8006
+
 LABEL traefik.enable="true" \
     traefik.docker.network="dokploy-network" \
     traefik.http.routers.dockerosx-web.rule="Host(`osx.jobsvue.com`)" \
