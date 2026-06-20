@@ -1,7 +1,6 @@
-# dockurr/macos — web UI on port 8006.
-# Dokploy Domains: osx.jobsvue.com → port 8006 → HTTPS on
-# Dokploy Advanced (required — Dockerfile cannot set these):
-#   Privileged ON | Cap NET_ADMIN | Devices /dev/kvm + /dev/net/tun | Volume → /storage
+# dockurr/macos — macOS VM + web UI on port 8006.
+# Dokploy: Domains → osx.jobsvue.com → port 8006 → HTTPS on
+# Runtime (Dokploy Advanced): devices /dev/kvm + /dev/net/tun, cap NET_ADMIN, volume /storage
 
 FROM dockurr/macos:1.14
 
