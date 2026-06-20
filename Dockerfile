@@ -1,6 +1,6 @@
-# dockurr/macos — macOS VM + web UI on port 8006.
-# Dokploy: Domains → osx.jobsvue.com → port 8006 → HTTPS on
-# Runtime (Dokploy Advanced): devices /dev/kvm + /dev/net/tun, cap NET_ADMIN, volume /storage
+# USE docker-compose.yml — Dockerfile-only deploy cannot pass /dev/kvm or NET_ADMIN.
+# If stuck on Dockerfile app, set Dokploy Advanced:
+#   Privileged ON | Cap NET_ADMIN | Devices /dev/kvm + /dev/net/tun | Volume → /storage
 
 FROM dockurr/macos:1.14
 

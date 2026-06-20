@@ -1,18 +1,22 @@
+# Deploy this with Dokploy "Compose" (NOT Dockerfile-only).
+# Dockerfile-only skips devices/caps → no KVM, no NET_ADMIN, re-downloads every redeploy.
+
 services:
   macos:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: dockurr/macos:1.14
     environment:
       VERSION: "15"
       DISK_SIZE: 256G
       RAM_SIZE: 8G
       CPU_CORES: "1"
+    privileged: true
     devices:
       - /dev/kvm
       - /dev/net/tun
     cap_add:
       - NET_ADMIN
+    device_cgroup_rules:
+      - "c *:* rwm"
     volumes:
       - macos-storage:/storage
     stop_grace_period: 2m
